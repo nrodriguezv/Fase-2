@@ -1,0 +1,29 @@
+
+h1 {
+	color: green;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 60px;
+	position: center;
+	right: -400px;
+	float:center;
+};
+
+
+p{
+	height: 50px;
+	width: 10px;
+	font-size: 15px;
+	position: center;
+	padding:10px;
+	display: block;
+	float:center;
+	margin-right:100px;
+	margin-left: 100px;
+}
+
+#container{
+	float: center;
+
+
+}
+

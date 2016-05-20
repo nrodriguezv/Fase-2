@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <meta charset="utf8" />
+    <title>Basura vs Educación</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Pais');
+      data.addColumn('number', 'Basura generada (kg)');
+      data.addColumn('number', 'Nivel educacional');
+      data.addRows([['Australia', 1.72, 0.921830685], ['Austria', 1.57, 0.794481027], ['Belgica', 1.25, 0.812291688], ['Brasil', 0.72, 0.661305629], ['Chile', 0.98, 0.745675257], ['China', 0.33, 0.609666667], ['Colombia', 0.53, 0.613333522], ['Costa Rica', 0.99, 0.651884651], ['Republica Checa', 0.88, 0.866222222], ['Dinamarca', 2.14, 0.872826055], ['Estonia', 0.82, 0.858533333], ['Finlandia', 1.38, 0.815088889], ['Francia', 1.47, 0.812564956], ['Alemania', 1.68, 0.884371952], ['Grecia', 1.38, 0.796988551], ['Hungria', 1.05, 0.804893768], ['Islandia', 0.88, 0.846866667], ['Indonesia', 0.09, 0.603136041], ['Irlanda', 1.69, 0.887066667], ['Israel', 1.67, 0.851288075], ['Italia', 1.45, 0.789505799], ['Japon', 0.97, 0.808], ['Corea', 0.98, 0.864509636], ['Luxemburgo', 1.82, 0.762111044], ['Mexico', 0.93, 0.635627148], ['Paises Bajos', 1.56, 0.89160543], ['Nueva Zelandia', 1.54, 0.916766667], ['Noruega', 1.33, 0.909922222], ['Polonia', 0.87, 0.822553465], ['Portugal', 1.34, 0.720369667], ['Federacion de Rusia', 1.33, 0.779955556], ['Republica Eslovaca', 0.85, 0.8021], ['Eslovenia', 1.14, 0.861858622], ['Espana', 1.33, 0.791840458], ['Suecia', 1.23, 0.830134011], ['Suiza', 1.9, 0.844089209], ['Turquia', 1.16, 0.647701279], ['Reino Unido', 1.35, 0.860260145], ['Estados Unidos', 2, 0.889759207]])
+
+        var options = {
+        	colorAxis: {colors: ['#05542B', '#E4FFE5']},
+        	title: 'Basura generada (2011)'
+           	};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+  	<h1>La educación, ¿contamina? (2011)</h1>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+    <a href="index2011-2.html" title="Gráfico">Ver gráfico</a>
+    <a href="index2000.html" title="2000">Ver 2000</a>
+    <a href="index2001.html" title="2001">Ver 2001</a>
+    <a href="index2002.html" title="2002">Ver 2002</a>
+    <a href="index2003.html" title="2003">Ver 2003</a>
+    <a href="index2004.html" title="2004">Ver 2004</a>
+    <a href="index2005.html" title="2005">Ver 2005</a>
+    <a href="index2006.html" title="2006">Ver 2006</a>
+    <a href="index2007.html" title="2007">Ver 2007</a>
+    <a href="index2008.html" title="2008">Ver 2008</a>
+    <a href="index2009.html" title="2009">Ver 2009</a>
+    <a href="index2010.html" title="2010">Ver 2010</a>    
+    <a href="index2012.html" title="2012">Ver 2012</a>
+    <a href="index2013.html" title="2013">Ver 2013</a>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <meta charset="utf8" />
+    <title>Basura vs Educación</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var button = document.getElementById('change-chart');
+      var chartDiv = document.getElementById('chart_div');
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Pais');
+      data.addColumn('number', 'Basura generada por día (kg/hab)');
+      data.addColumn('number', 'Nivel educacional');
+
+      data.addRows([
+        ['Australia', 1.77, 0.915800031], ['Austria', 1.62, 0.779966799], ['Belgica', 1.28, 0.802112017], ['Brasil', 0.74, 0.657925616], ['Chile', 0.94, 0.737103955], ['China', 0.32, 0.589753333], ['Colombia', 0.54, 0.609410885], ['Costa Rica', , 0.63728311], ['Republica Checa', 0.87, 0.860217778], ['Dinamarca', 1.9, 0.868334026], ['Estonia', 0.93, 0.852297778], ['Finlandia', 1.31, 0.808273333], ['Francia', 1.46, 0.802689065], ['Alemania', 1.62, 0.878565114], ['Grecia', 1.27, 0.795299021], ['Hungria', 1.18, 0.800784955], ['Islandia', 0.97, 0.843353333], ['Indonesia', 0.08, 0.587970061], ['Irlanda', 1.78, 0.885626667], ['Israel', 1.67, 0.846920692], ['Italia', 1.49, 0.780065038], ['Japon', 0.99, 0.800044444], ['Corea', 1.04, 0.856234964], ['Luxemburgo', 1.86, 0.754871629], ['Mexico', 0.9, 0.621041616], ['Paises Bajos', 1.61, 0.859493415], ['Nueva Zelandia', , 0.914973333], ['Noruega', 1.29, 0.902115556], ['Polonia', 0.87, 0.807882267], ['Portugal', 1.42, 0.701223013], ['Federacion de Rusia', 1.28, 0.778975556], ['Republica Eslovaca', 0.84, 0.802366667], ['Eslovenia', 1.44, 0.857638423], ['Espana', 1.48, 0.767758359], ['Suecia', 1.29, 0.823311111], ['Suiza', 1.93, 0.834158763], ['Turquia', 1.16, 0.582399156], ['Reino Unido', 1.43, 0.865432023], ['Estados Unidos', 1.98, 0.88368347]
+      ]);
+
+      var materialOptions = {
+        chart: {
+          title: 'Basura generada vs nivel educacional'
+        },
+        width: 900,
+        height: 500,
+        series: {
+          // Gives each series an axis name that matches the Y-axis below.
+          0: {axis: 'Basura generada por día (kg/hab)'},
+          1: {axis: 'Nivel educativo'}
+        },
+        axes: {
+          // Adds labels to each axis; they don't have to match the axis names.
+          y: {
+            Basura: {label: 'Basura generada por día (kg/hab)'},
+            Educacion: {label: 'Nivel educactivo'}
+          }
+        }
+      };
+
+      var classicOptions = {
+        title: 'Basura generada vs nivel educacional',
+        width: 900,
+        height: 500,
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1}
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: 'Basura generada por día (kg/hab)'},
+          1: {title: 'Nivel educativo'}
+        },
+        hAxis: {
+        },
+        vAxis: {
+          viewWindow: {
+            max: 30
+          }
+        }
+      };
+
+      function drawMaterialChart() {
+        var materialChart = new google.charts.Line(chartDiv);
+        materialChart.draw(data, materialOptions);
+        button.innerText = 'Cambiar a escala real';
+        button.onclick = drawClassicChart;
+      }
+
+      function drawClassicChart() {
+        var classicChart = new google.visualization.LineChart(chartDiv);
+        classicChart.draw(data, classicOptions);
+        button.innerText = 'Cambiar a escala ajustada';
+        button.onclick = drawMaterialChart;
+      }
+
+      drawMaterialChart();
+
+    }
+    </script>
+  </head>
+  <body>
+    <h2>2009</h2>
+    <button id="change-chart">Change to Classic</button>
+    <div id="chart_div"></div>
+    <a href="index2009.html" title="Mapa">Ver mapa</a>
+    <a href="index2000.html" title="2000">Ver 2000</a>
+    <a href="index2001.html" title="2001">Ver 2001</a>
+    <a href="index2002.html" title="2002">Ver 2002</a>
+    <a href="index2003.html" title="2003">Ver 2003</a>
+    <a href="index2004.html" title="2004">Ver 2004</a>
+    <a href="index2005.html" title="2005">Ver 2005</a>
+    <a href="index2006.html" title="2006">Ver 2006</a>
+    <a href="index2007.html" title="2007">Ver 2007</a>
+    <a href="index2008.html" title="2008">Ver 2008</a>
+    <a href="index2010.html" title="2010">Ver 2010</a>
+    <a href="index2011.html" title="2011">Ver 2011</a>
+    <a href="index2012.html" title="2012">Ver 2012</a>
+    <a href="index2013.html" title="2013">Ver 2013</a>
+  </body>
+</html>
